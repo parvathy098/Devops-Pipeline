@@ -10,21 +10,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // For Windows, use 'bat' instead of 'sh'
-                bat 'echo Building the project on Windows'
+                // For Windows, use 'sh' instead of 'sh'
+                sh 'echo Building the project on Windows'
                 // Example for npm build or Docker build if you're using Node.js or Docker:
-                // bat 'npm install'
-                // bat 'docker build -t %DOCKER_IMAGE% .'
+                // sh 'npm install'
+                // sh 'docker build -t %DOCKER_IMAGE% .'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Use 'bat' to run tests on Windows
-                bat 'echo Running tests on Windows'
+                // Use 'sh' to run tests on Windows
+                sh 'echo Running tests on Windows'
                 // Example for Node.js testing:
-                // bat 'npm test'
+                // sh 'npm test'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo 'Running Code Quality Analysis...'
                 // Example SonarQube analysis for Windows:
-                bat 'echo Running SonarQube analysis'
+                sh 'echo Running SonarQube analysis'
                 // If using SonarQube or another tool, integrate here
             }
         }
@@ -41,16 +41,16 @@ pipeline {
             steps {
                 echo 'Deploying the application...'
                 // For Docker Compose or any other Windows-friendly deployment tool
-                bat 'echo Deploying the application on Windows'
+                sh 'echo Deploying the application on Windows'
                 // Example for Docker Compose:
-                // bat 'docker-compose up -d'
+                // sh 'docker-compose up -d'
             }
         }
 
         stage('Release') {
             steps {
                 echo 'Releasing the application...'
-                bat 'echo Releasing the application to production'
+                sh 'echo Releasing the application to production'
                 // Integrate release management commands (e.g., AWS CodeDeploy, Octopus)
             }
         }
@@ -58,7 +58,7 @@ pipeline {
         stage('Monitoring & Alerting') {
             steps {
                 echo 'Setting up Monitoring and Alerting...'
-                bat 'echo Monitoring production environment on Windows'
+                sh 'echo Monitoring production environment on Windows'
                 // Integrate monitoring tools like Datadog or New Relic here
             }
         }
