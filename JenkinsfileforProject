@@ -1,0 +1,6 @@
+stage('Build') {
+    steps {
+        echo 'Installing Node.js dependencies...'
+        sh 'npm install'
+    }
+}
